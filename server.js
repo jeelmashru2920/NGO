@@ -346,4 +346,7 @@ app.get("/api/analytics", (req, res) => {
 });
 
 // ─── START ───────────────────────────────────────────────────────────────────
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "ngo-app", "public", "index.html"));
+})
 app.listen(PORT, () => console.log(`🌱 NGO App running on http://localhost:${PORT}`));
